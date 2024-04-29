@@ -1,0 +1,57 @@
+const arrayImages = ["assets/img/img1-media.jpg","assets/img/img2-media.jpg","assets/img/img3-media.jpg"]
+
+const mainImageImg = document.querySelector(".main-image-img");
+const selectImagesImg = Array.from(document.querySelectorAll(".select-images-img"));
+
+const buttonNext = document.querySelector("#btn-next");
+const buttonPrev = document.querySelector("#btn-prev");
+
+var a = 0;
+
+const img01 = document.querySelector("#img01");
+const img02 = document.querySelector("#img02");
+const img03 = document.querySelector("#img03");
+
+img01.addEventListener("click", () => {
+    a = 0;
+    mainImageImg.setAttribute("src", arrayImages[a]);
+    console.log(a)
+})
+img02.addEventListener("click", () => {
+    a = 1;
+    mainImageImg.setAttribute("src", arrayImages[a]);
+    console.log(a)
+})
+img03.addEventListener("click", () => {
+    a = 2;
+    mainImageImg.setAttribute("src", arrayImages[a]);
+    console.log(a)
+});
+
+mainImageImg.setAttribute("src", arrayImages[a]);
+
+function nextSlide() {
+    a++;
+    a = a > arrayImages.length - 1 ? 0 : a++;
+    mainImageImg.setAttribute("src", arrayImages[a]);
+    console.log(a);
+}
+
+function previewSlide() {
+    a--;
+    a = a < 0 ? arrayImages.length - 1 : a--;
+    mainImageImg.setAttribute("src", arrayImages[a]);
+    console.log(a);
+}
+
+buttonNext.addEventListener("click", nextSlide);
+buttonPrev.addEventListener("click", previewSlide);
+
+
+console.log(img01,img02,img03);
+
+// selectImagesImg.forEach(images => {
+//     images.addEventListener("click", event => {
+//         mainImageImg.setAttribute("src",event.target.getAttribute("src"));
+//     })
+// })

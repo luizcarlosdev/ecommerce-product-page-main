@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-commerce projectt</title>
+  <link rel="stylesheet"
+  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <script src="./assets/js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div id="collapse-content">
+          <nav>
+            <img src="./images/logo.svg" alt="sneakers">
+            <ul>
+              <li><a href="#">collections</a></li>
+              <li><a href="#">men</a></li>
+              <li><a href="#">women</a></li>
+              <li><a href="#">about</a></li>
+              <li><a href="#">contact</a></li>
+            </ul>
+          </nav>
+          <div id="separate-items">
+            <i class='bx bx-cart'></i>
+            <img src="./images/image-avatar.png" alt="">
+          </div>
+        </div>
+    </header>
+    <main>
+      <div id="sneakers-container">
+        <div id="sneakers-display">
+          <img id="sneakers-display-image" src="" alt="">
+        </div>
+        <div id="select-sneakers">
+          <img id="img01" class="select-images-sneakers active" src="./images/image-product-1-thumbnail.jpg" alt="">
+          <img id="img02" class="select-images-sneakers" src="./images/image-product-2-thumbnail.jpg" alt="">
+          <img id="img03" class="select-images-sneakers" src="./images/image-product-3-thumbnail.jpg" alt="">
+          <img id="img04" class="select-images-sneakers" src="./images/image-product-4-thumbnail.jpg" alt="">
+        </div>
+      </div>
+      <section>
+        <div id="tittle">
+          <h6>sneaker company</h6>
+          <h1>fall limited edition<br/> sneakers</h1>
+        </div>
+        <div id="description-and-price">
+          <p>These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everthing the weather can offer.</p>
+          <div id="price">
+            <div id="current">
+              <div id="current-price">$125.00</div>
+              <div id="descont-applicated">
+                50%
+              </div>
+            </div>
+            <div id="ancient-price">$250.00</div>
+          </div>
+          <div id="select-quant-and-add-cart">
+            <div id="quant">
+              <button id="btn-minus"><img src="./images/icon-minus.svg" alt=""></button>
+             <div id="valuePrice">
+              <p>0</p>
+             </div>
+              <button id="btn-plus"><img src="./images/icon-plus.svg" alt=""></button>
+            </div>
+            <div id="add-cart">
+              <button> <i class='bx bx-cart'></i><span>Add to cart</span></button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="container">
+      <section>
+        <div id="close-all">
+          <button id="close-all-x">X</button>
+        </div>
+        <div id="slider-images">
+          <img id="slider-images-img" src="" alt="">
+          <div id="slider-images-buttons">
+            <button id="btn-prev-slider"><</button>
+            <button id="btn-next-slider">></button>
+          </div>
+        </div>
+        <div id="group-images">
+          <img id="group-images-01" class="group-images-img active" src="./images/image-product-1-thumbnail.jpg" alt="">
+          <img id="group-images-02" class="group-images-img" src="./images/image-product-2-thumbnail.jpg" alt="">
+          <img id="group-images-03" class="group-images-img" src="./images/image-product-3-thumbnail.jpg" alt="">
+          <img id="group-images-04" class="group-images-img" src="./images/image-product-4-thumbnail.jpg" alt="">
+        </div>
+      </section>
+    </div>
+</body>
+</html>
