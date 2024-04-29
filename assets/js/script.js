@@ -16,6 +16,21 @@ const img02 = document.querySelector("#img02");
 const img03 = document.querySelector("#img03");
 const img04 = document.querySelector("#img04");
 
+const cartProducts = document.querySelector("#products-resume");
+const resumeCart = document.querySelector("#resume-cart");
+const itemsCart = document.querySelector("#items-cart");
+const quantBuy = document.querySelector("#quant-buy");
+const finalPrice = document.querySelector("#final-price");
+
+cartProducts.addEventListener("click", () => {
+  cartProducts.classList.toggle("openCartProducts");
+  if (cartProducts.classList.contains("openCartProducts")) {
+    resumeCart.style.display = "block";
+  } else {
+    resumeCart.style.display = "none";
+  }
+});
+
 function removeClassActive(element) {
   const selectImagesSneakers = Array.from(
     document.querySelectorAll(".select-images-sneakers")
@@ -63,6 +78,11 @@ btnMinus.addEventListener("click", () => {
   valuePrice.textContent = value;
 });
 
+const addCartBtn = document.querySelector("#add-cart-btn");
+
+addCartBtn.addEventListener("click", () => {
+  itemsCart.textContent = value;
+})
 
 const container = document.querySelector(".container");
 const sliderImagesImg = document.querySelector("#slider-images-img");
@@ -75,8 +95,8 @@ closeAllX.addEventListener("click", () => {
 });
 
 sneakersDisplay.addEventListener("click", () => {
-    container.style.display = "block";
-  });
+  container.style.display = "block";
+});
 
 const groupImage01 = document.querySelector("#group-images-01");
 const groupImage02 = document.querySelector("#group-images-02");
@@ -94,10 +114,7 @@ function ContainerRemoveClass(element) {
 
 let count = 0;
 
-function nextSliderImageContainer() {
-  count++;
-  count = count > arrayImages.length - 1 ? 0 : count++;
-  sliderImagesImg.setAttribute("src", arrayImages[count]);
+function alternateFilterClass() {
   if (count == 0) {
     ContainerRemoveClass(groupImage01);
   }
@@ -112,22 +129,18 @@ function nextSliderImageContainer() {
   }
 }
 
+function nextSliderImageContainer() {
+  count++;
+  count = count > arrayImages.length - 1 ? 0 : count++;
+  sliderImagesImg.setAttribute("src", arrayImages[count]);
+  alternateFilterClass();
+}
+
 function prevSliderImageConteiner() {
   count--;
   count = count < 0 ? arrayImages.length - 1 : count--;
   sliderImagesImg.setAttribute("src", arrayImages[count]);
-  if (count == 0) {
-    ContainerRemoveClass(groupImage01);
-  }
-  if (count == 1) {
-    ContainerRemoveClass(groupImage02);
-  }
-  if (count == 2) {
-    ContainerRemoveClass(groupImage03);
-  }
-  if (count == 3) {
-    ContainerRemoveClass(groupImage04);
-  }
+  alternateFilterClass();
 }
 
 btnPrevSlider.addEventListener("click", () => {
@@ -142,69 +155,25 @@ btnNextSlider.addEventListener("click", () => {
 groupImage01.addEventListener("click", () => {
   count = 0;
   sliderImagesImg.setAttribute("src", arrayImages[count]);
-  if (count == 0) {
-    ContainerRemoveClass(groupImage01);
-  }
-  if (count == 1) {
-    ContainerRemoveClass(groupImage02);
-  }
-  if (count == 2) {
-    ContainerRemoveClass(groupImage03);
-  }
-  if (count == 3) {
-    ContainerRemoveClass(groupImage04);
-  }
+  alternateFilterClass();
 });
 
 groupImage02.addEventListener("click", () => {
   count = 1;
   sliderImagesImg.setAttribute("src", arrayImages[count]);
-  if (count == 0) {
-    ContainerRemoveClass(groupImage01);
-  }
-  if (count == 1) {
-    ContainerRemoveClass(groupImage02);
-  }
-  if (count == 2) {
-    ContainerRemoveClass(groupImage03);
-  }
-  if (count == 3) {
-    ContainerRemoveClass(groupImage04);
-  }
+  alternateFilterClass();
 });
 
 groupImage03.addEventListener("click", () => {
   count = 2;
   sliderImagesImg.setAttribute("src", arrayImages[count]);
-  if (count == 0) {
-    ContainerRemoveClass(groupImage01);
-  }
-  if (count == 1) {
-    ContainerRemoveClass(groupImage02);
-  }
-  if (count == 2) {
-    ContainerRemoveClass(groupImage03);
-  }
-  if (count == 3) {
-    ContainerRemoveClass(groupImage04);
-  }
+  alternateFilterClass();
 });
 
 groupImage04.addEventListener("click", () => {
   count = 3;
   sliderImagesImg.setAttribute("src", arrayImages[count]);
-  if (count == 0) {
-    ContainerRemoveClass(groupImage01);
-  }
-  if (count == 1) {
-    ContainerRemoveClass(groupImage02);
-  }
-  if (count == 2) {
-    ContainerRemoveClass(groupImage03);
-  }
-  if (count == 3) {
-    ContainerRemoveClass(groupImage04);
-  }
+  alternateFilterClass();
 });
 
 sliderImagesImg.setAttribute("src", arrayImages[count]);

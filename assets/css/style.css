@@ -34,7 +34,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5px;
 }
 
 header div#collapse-content {
@@ -56,8 +55,9 @@ header nav {
 
 header nav ul {
     display: flex;
+    height: 100%;
     align-items: center;
-    gap: 12px;
+    gap: 17px;
 }
 
 header nav ul li {
@@ -66,26 +66,171 @@ header nav ul li {
 }
 
 header nav ul li a {
+    position: relative;
+    height: 100%;
     color: var(--dark-grayish-blue);
     text-transform: capitalize;
     font-size: 17px;
     font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-origin: left;
+    transition: all .3s ease;
 }
+
+header nav ul li a::after {
+    position: absolute;
+    content: " ";
+    bottom: 5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--orange);
+    transition: all .3s ease;
+}
+
+header nav ul li a:hover::after {
+    width: 100%;
+    transform-origin: right;
+}
+
+/* header nav ul li a:hover {
+    border-bottom: 2px solid orange;
+} */
 
 
 header div#separate-items {
+    position: relative;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+header div#separate-items div#cart {
+    position: relative;
+}
+
+header div#separate-items div#cart i {
+    height: 100%;
     display: flex;
     align-items: center;
-    gap: 25px;
-
-    & i {
-        font-size: 1.6rem;
-    }
-
-    & img {
-        width: 50px;
-    }
+    justify-content: center;
+    font-size: 1.6rem;
 }
+
+header div#separate-items div#items-cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -17px;
+    right: -8px;
+    width: 26px;
+    height: 17px;
+    background-color: var(--orange);
+    border-radius: 10px;
+    color: var(--white);
+    font-size: 10px;
+}
+
+header div#separate-items img {
+    width: 50px;
+    cursor: pointer;
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+}
+
+header div#separate-items div#resume-cart {
+    display: none;
+    position: absolute;
+    top: 89px;
+    right: -10px;
+    width: 380px;
+    background-color: var(--white);
+    box-shadow: 0px 6px 9px 9px rgba(0, 0, 0, 0.07);
+    border-radius: 10px;
+    padding: 10px 0px;
+}
+
+header div#separate-items div#resume-cart div#resume-cart-header {
+    padding: 15px;
+    border-bottom: 0.5px solid #b1b1b1;
+}
+/* 
+header div#separate-items div#resume-cart div#resume-cart-body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 7px;
+    width: 100%;
+    background-color: var(--white);
+    padding: 9px 18px;
+    margin: 5px 0px;
+}
+
+header div#separate-items div#resume-cart div#resume-cart-body div#resume-cart-image {
+    height: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+header div#separate-items div#resume-cart div#resume-cart-body div#resume-cart-image img {
+    width: 80px;
+    height: 100%;
+}
+
+header div#separate-items div#resume-cart div#resume-cart-description {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+header div#separate-items div#resume-cart div#resume-cart-description div#resume-cart-description-tittle {
+    text-transform: capitalize;
+    font-weight: 500;
+    color: var(--dark-grayish-blue);
+}
+
+header div#separate-items div#resume-cart div#resume-cart-description div#resume-cart-description-body {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+header div#separate-items div#resume-cart div#resume-cart-description div#resume-cart-description-body span#current-price-view, span#quant-buy {
+    color: var(--dark-grayish-blue);
+}
+
+header div#separate-items div#resume-cart div#resume-cart-description div#resume-cart-description-body span#final-price {
+    font-weight: bold;
+    color: var(--black);
+}
+
+header div#separate-items div#resume-cart div#resume-cart-delete-items img {
+    width: 20px;
+}
+
+header div#separate-items div#resume-cart div#resume-cart-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0px 18px;
+    padding-bottom: 10px;
+}
+
+header div#separate-items div#resume-cart div#resume-cart-button button {
+    width: 100%;
+    color: var(--white);
+    background-color: var(--orange);
+    padding: 14px 12px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.1rem;
+} */
 
 main {
     display: grid;
@@ -95,7 +240,7 @@ main {
     height: auto;
     max-width: 1500px;
     margin: 0 auto;
-    padding-top: 25px;
+    padding-top: 30px;
 }
 
 main div#sneakers-container {
