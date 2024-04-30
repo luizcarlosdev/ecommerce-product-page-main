@@ -5,6 +5,39 @@ const arrayImages = [
   "images/image-product-4.jpg",
 ];
 
+const menuHamburgerBtn = document.querySelector("#menu-hamburger-btn");
+menuHamburgerBtn.addEventListener("click", () => {
+  const sideMenu = document.querySelector("#side-menu");
+  sideMenu.style.display = "block";
+});
+
+const menuHeaderImage = document.querySelector("#menu-header-image");
+menuHeaderImage.addEventListener("click", () => {
+  const sideMenu = document.querySelector("#side-menu");
+  sideMenu.style.display = "none";
+})
+
+let changeImage = 0;
+
+const sliderFirstImage = document.querySelector("#slider-first-image");
+sliderFirstImage.setAttribute("src", arrayImages[changeImage]);
+
+const sliderFistBtn01 = document.querySelector("#slider-first-btn1");
+
+const sliderFistBtn02 = document.querySelector("#slider-first-btn2");
+
+sliderFistBtn01.addEventListener("click", () => {
+  changeImage--;
+  changeImage = changeImage < 0 ? arrayImages.length - 1 : changeImage--;
+  sliderFirstImage.setAttribute("src", arrayImages[changeImage]);
+})
+
+sliderFistBtn02.addEventListener("click", () => {
+  changeImage++;
+  changeImage = changeImage > arrayImages.length - 1 ? 0 : changeImage++;
+  sliderFirstImage.setAttribute("src", arrayImages[changeImage]);
+});
+
 const sneakersDisplay = document.querySelector("#sneakers-display");
 
 const sneakersDisplayImage = document.querySelector("#sneakers-display-image");

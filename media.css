@@ -1,0 +1,99 @@
+@media screen and (max-width: 768px) {
+    header div#collapse-content {
+        width: 100%;
+        padding: 0px 10px;
+    }
+
+    header nav {
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    header nav div#menu-hamburger {
+        display: block;
+    }
+
+    header nav ul {
+        display: none;
+    }
+
+    header div#separate-items div#resume-cart {
+        top: 95px;
+        right: 10px;
+        margin: 17px auto;
+        z-index: 1000000;
+    }
+
+    section#slider-first {
+        display: block;
+    }
+
+    main {
+        width: 100%;
+        grid-template-columns: 1fr;
+        
+    }
+
+    main div#sneakers-container {
+        display: none;
+    }
+
+    section#introduction-product {
+        padding: 10px 25px;
+        justify-content: center;
+        gap: 10px;
+        margin: 0 auto;
+    }
+
+    section#introduction-product div#tittle {
+        row-gap: 5px;
+    }
+
+    section#introduction-product div#tittle h1 {
+        font-size: 1.8rem;
+    }
+
+    section#introduction-product div#description-and-price {
+        row-gap: 10px;
+    }
+
+    section#introduction-product div#description-and-price p {
+        font-size: 15px;
+    }
+
+    section div#description-and-price div#price {
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 3px;
+    }
+
+    section#introduction-product div#description-and-price div#price div#current div#current-price {
+        font-size: 1.9rem;
+    }
+
+    section#introduction-product div#select-quant-and-add-cart {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        place-content: center;
+        row-gap: 10px;
+        column-gap: 0;
+    }
+
+    section#introduction-product div#select-quant-and-add-cart div#quant {
+        width: 100%;
+        height: 40px;
+        margin: 0 auto;
+    }
+
+
+    section#introduction-product div#select-quant-and-add-cart div#add-cart button {
+        width: 100%;
+        height: 40px;
+        margin: 0 auto;
+    }
+}

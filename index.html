@@ -7,12 +7,34 @@
   <link rel="stylesheet"
   href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
   <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="media.css">
   <script src="./assets/js/script.js" defer></script>
 </head>
 <body>
+  <div id="side-menu">
+    <aside id="menu">
+      <div id="menu-header">
+        <img id="menu-header-image" src="./images/icon-close.svg" alt="">
+      </div>
+      <div id="menu-body">
+        <ul>
+          <li><a href="#">collections</a></li>
+          <li><a href="#">men</a></li>
+          <li><a href="#">women</a></li>
+          <li><a href="#">about</a></li>
+          <li><a href="#">contact</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
     <header>
         <div id="collapse-content">
           <nav>
+            <div id="menu-hamburger">
+              <button id="menu-hamburger-btn">
+                <img src="./images/icon-menu.svg" alt="">
+              </button>
+            </div>
             <img src="./images/logo.svg" alt="sneakers">
             <ul>
               <li><a href="#">collections</a></li>
@@ -37,6 +59,13 @@
           </div>
         </div>
     </header>
+    <section id="slider-first">
+      <img src="./images/image-product-1.jpg" alt="" id="slider-first-image">
+      <div id="slider-first-buttons">
+        <button id="slider-first-btn1"><</button>
+        <button id="slider-first-btn2">></button>
+      </div>
+    </section>
     <main>
       <div id="sneakers-container">
         <div id="sneakers-display">
@@ -49,7 +78,7 @@
           <img id="img04" class="select-images-sneakers" src="./images/image-product-4-thumbnail.jpg" alt="">
         </div>
       </div>
-      <section>
+      <section id="introduction-product">
         <div id="tittle">
           <h6>sneaker company</h6>
           <h1>fall limited edition<br/> sneakers</h1>
