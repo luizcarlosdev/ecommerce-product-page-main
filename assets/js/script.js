@@ -78,11 +78,114 @@ btnMinus.addEventListener("click", () => {
   valuePrice.textContent = value;
 });
 
+const cartEmpty = document.createElement("div");
+cartEmpty.setAttribute("id", "cart-empty");
+resumeCart.appendChild(cartEmpty);
+
+const cartEmptyParagraph = document.createElement("p");
+cartEmptyParagraph.textContent = "Your cart is empty.";
+cartEmpty.appendChild(cartEmptyParagraph);
+
+const resumeCartBody = document.createElement("div");
+resumeCartBody.setAttribute("id", "resume-cart-body");
+//change;
+
+const resumeCartImage = document.createElement("div");
+resumeCartImage.setAttribute("id", "resume-cart-image");
+resumeCartBody.appendChild(resumeCartImage);
+
+const resumeCartImg = document.createElement("img");
+resumeCartImg.setAttribute("src", "./images/image-product-2-thumbnail.jpg");
+resumeCartImage.appendChild(resumeCartImg);
+
+const resumeCartDescription = document.createElement("div");
+resumeCartDescription.setAttribute("id", "resume-cart-description");
+resumeCartBody.appendChild(resumeCartDescription);
+
+const resumeCartDescriptionTittle = document.createElement("div");
+resumeCartDescriptionTittle.setAttribute(
+  "id",
+  "resume-cart-description-tittle"
+);
+resumeCartDescriptionTittle.textContent = "Fall Limited Edition Sneakers";
+resumeCartDescription.appendChild(resumeCartDescriptionTittle);
+
+const resumeCartDescriptionBody = document.createElement("div");
+resumeCartDescriptionBody.setAttribute("id", "resume-cart-description-body");
+resumeCartDescription.appendChild(resumeCartDescriptionBody);
+
+const currentPriceView = document.createElement("span");
+currentPriceView.setAttribute("id", "current-price-view");
+currentPriceView.textContent = "$125.00 x"; // muaDinamica
+resumeCartDescriptionBody.appendChild(currentPriceView);
+
+const quantSneakersBuy = document.createElement("span");
+quantSneakersBuy.setAttribute("id", "quant-buy");
+quantSneakersBuy.textContent = "0"; // muaDinamica
+resumeCartDescriptionBody.appendChild(quantSneakersBuy);
+
+const finalSneakersPrice = document.createElement("span");
+finalSneakersPrice.setAttribute("id", "final-price");
+finalSneakersPrice.textContent = "$0.00"; //mudaDinamica
+resumeCartDescriptionBody.appendChild(finalSneakersPrice);
+
+const resumeCartDeleteItems = document.createElement("div");
+resumeCartDeleteItems.setAttribute("id", "resume-cart-delete-items");
+resumeCartBody.appendChild(resumeCartDeleteItems);
+
+const resumeCartDeleteItemsImg = document.createElement("img");
+resumeCartDeleteItemsImg.setAttribute("id", "imageDelete");
+resumeCartDeleteItemsImg.setAttribute("src", "./images/icon-delete.svg");
+resumeCartDeleteItems.appendChild(resumeCartDeleteItemsImg);
+
+const resumeCartButton = document.createElement("div");
+resumeCartButton.setAttribute("id", "resume-cart-button");
+
+const resumeCartButtonElement = document.createElement("button");
+resumeCartButtonElement.textContent = "Checkout";
+resumeCartButton.appendChild(resumeCartButtonElement);
+
 const addCartBtn = document.querySelector("#add-cart-btn");
 
+resumeCartDeleteItemsImg.addEventListener("click", () => {
+  resumeCart.classList.toggle("monde");
+  if (resumeCart.classList.toggle("monde")) {
+    cartEmpty.classList.toggle("removeEmpty")
+  }
+  if (value > 0 && addCartBtn.click()) {
+    resumeCart.appendChild(cartEmpty);
+    if (resumeCart.appendChild(cartEmpty)) {
+      resumeCart.appendChild(cartEmpty);
+    } 
+  }
+  resumeCart.appendChild(cartEmpty);
+  resumeCart.removeChild(resumeCartBody);
+  resumeCart.removeChild(resumeCartButton);
+});
+
 addCartBtn.addEventListener("click", () => {
+  if (value == 0) {
+    cartEmpty.classList.toggle("removeEmpty")
+    resumeCart.appendChild(cartEmpty);
+  }
   itemsCart.textContent = value;
-})
+  if (value > 0) {
+    cartEmpty.classList.toggle("removeEmpty");
+    if (cartEmpty.classList.contains("removeEmpty")) {
+      resumeCart.removeChild(cartEmpty);
+    } else {
+      cartEmpty.classList.toggle("removeEmpty")
+    }
+    quantSneakersBuy.textContent = value;
+    finalSneakersPrice.textContent = `$${125 * value}.00`;
+    resumeCart.appendChild(resumeCartBody);
+    resumeCart.appendChild(resumeCartButton);
+  } else {
+    resumeCart.appendChild(cartEmpty);
+    resumeCart.removeChild(resumeCartBody);
+    resumeCart.removeChild(resumeCartButton);
+  }
+});
 
 const container = document.querySelector(".container");
 const sliderImagesImg = document.querySelector("#slider-images-img");
